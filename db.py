@@ -1,7 +1,7 @@
 import aiosqlite
 
 DB_PATH = "database.db"
-
+#ааа
 # ===== Инициализация базы =====
 async def init_db():
     async with aiosqlite.connect(DB_PATH) as db:
@@ -123,4 +123,5 @@ async def get_leaderboard(limit: int = 100):
             "LIMIT ?", (limit,)
         ) as cursor:
             leaderboard = await cursor.fetchall()
+
     return leaderboard
